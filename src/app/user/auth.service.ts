@@ -7,6 +7,7 @@ import { of, Observable } from 'rxjs';
 @Injectable()
 export class AuthService {
   currentUser: IUser;
+  remoteUrl: string = 'https://movix-ng-server.herokuapp.com';
 
   constructor(private http: HttpClient) {
 
@@ -17,7 +18,7 @@ export class AuthService {
       password: password
     };
     const options = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
-    return this.http.post('/api/login', loginInfo, options)
+    return this.http.post(this.remoteUrl + '/api/login', loginInfo, options)
       .pipe(tap(data => {
         this.currentUser = <IUser>data['user'];
       }))
@@ -37,7 +38,7 @@ export class AuthService {
   }
 
   checkAuthenticationStatus() {
-    return this.http.get('/api/currentIdentity')
+    return this.http.get(this.remoteUrl + '/api/currentIdentity')
       .pipe(tap(data => {
         if (data instanceof Object) {
           this.currentUser = <IUser>data;
@@ -51,12 +52,12 @@ export class AuthService {
     this.currentUser.lastName = lastName;
 
     const options = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
-    return this.http.put(`/api/users/${this.currentUser.id}`, this.currentUser, options);
+    return this.http.put(this.remoteUrl + `/api/users/${this.currentUser.id}`, this.currentUser, options);
   }
 
   saveUser(user) {
     const options = { headers: new HttpHeaders({'Content-Type': 'application/json'})};
-    return this.http.post<IUser>('/api/signup', user, options)
+    return this.http.post<IUser>(this.remoteUrl + '/api/signup', user, options)
     .pipe(catchError(this.handleError<IUser>('saveUser')));
   }
 
@@ -64,7 +65,7 @@ export class AuthService {
     this.currentUser = undefined;
 
     const options = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
-    return this.http.post('/api/logout', {}, options);
+    return this.http.post(this.remoteUrl + '/api/logout', {}, options);
   }
 
   private handleError<T>(operation = 'operation', result?: T) {

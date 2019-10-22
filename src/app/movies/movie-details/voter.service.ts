@@ -6,11 +6,12 @@ import { catchError } from 'rxjs/operators';
 
 @Injectable()
 export class VoterService {
+  remoteUrl: string = 'https://movix-ng-server.herokuapp.com';
   constructor(private http: HttpClient) {
 
   }
   deleteVoter(movieId: number, movie: IMovie, voterName: string) {
-    const url = `/api/movies/${movieId}/users/${voterName}`;
+    const url = this.remoteUrl + `/api/movies/${movieId}/users/${voterName}`;
     movie.favorites = movie.favorites.filter(voter => voter !== voterName);
     this.http.delete(url)
       .pipe(catchError(this.handleError('addVoter')))
@@ -22,7 +23,7 @@ export class VoterService {
     const options = {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };
-    const url = `/api/movies/${movieId}/users/${voterName}`;
+    const url = this.remoteUrl + `/api/movies/${movieId}/users/${voterName}`;
     this.http.post(url, {}, options)
       .pipe(catchError(this.handleError('addVoter')))
       .subscribe();
