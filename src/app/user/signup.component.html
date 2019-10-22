@@ -1,0 +1,31 @@
+<h1>User Sign-up</h1>
+<hr>
+<div class="col-md-6">
+  <form #signupForm="ngForm" (ngSubmit)="saveUser(signupForm.value)" autocomplete="off" novalidate>
+    <div class="form-group"
+      [ngClass]="{'error': signupForm.controls.userName?.invalid && signupForm.controls.userName?.touched}">
+      <label for="UserName">User Name:</label>
+      <em *ngIf="signupForm.controls.userName?.invalid && (signupForm.controls.userName?.touched)">Required</em>
+      <input (ngModel)="userName" name="userName" required id="UserName" type="text" class="form-control"
+        placeholder="User Name e.g. johnpapa" />
+    </div>
+    <div class="form-group"
+      [ngClass]="{'error': signupForm.controls.firstName?.invalid && signupForm.controls.firstName?.touched}">
+      <label for="FirstName">First Name:</label>
+      <em *ngIf="signupForm.controls.firstName?.invalid && (signupForm.controls.firstName?.touched)">Required</em>
+      <input (ngModel)="firstName" name="firstName" required id="FirstName" type="text" class="form-control"
+        placeholder="First Name" />
+    </div>
+    <div class="form-group"
+      [ngClass]="{'error': signupForm.controls.lastName?.invalid && signupForm.controls.lastName?.touched}">
+      <label for="LastName">Last Name:</label>
+      <em *ngIf="signupForm.controls.lastName?.invalid && (signupForm.controls.lastName?.touched)">Required</em>
+      <input (ngModel)="lastName" name="lastName" required id="LastName" type="text" class="form-control"
+        placeholder="Last Name" />
+    </div>
+
+
+    <button type="submit" [disabled]="signupForm.invalid" class="btn btn-primary">Save</button>
+    <button type="button" class="btn btn-default" (click)="cancel()">Cancel</button>
+  </form>
+</div>

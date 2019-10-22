@@ -1,0 +1,36 @@
+<div class="container">
+  <!--img [src]="movie?.imageUrl" [alt]="movie?.name" class="movie-image"-->
+
+  <div class="row">
+    <div class="col-md-11">
+
+      <img [src]="movie?.imageUrl" style=" margin-right:15px" [alt]="movie?.name" class="movie-image">
+      <h2 style="display: inline-block;">{{movie?.name | uppercase}} </h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-1">
+      <div *ngIf="auth.isAuthenticated()">
+        <upvote (vote)="toggleVote(movie)" [count]="movie?.favorites.length" [voted]="userHasVoted(movie)">
+        </upvote>
+      </div>
+    </div>
+    <div class="col-md-10">
+      <ul class="movie-info">
+        <li> {{movie?.rated}} |</li>
+        <li> {{movie?.runtime}} |</li>
+        <li> {{movie?.genre}} |</li>
+        <li> {{movie?.released | date}} |</li>
+        <li> <a href="{{movie?.trailerUrl}}" target="_blank">View trailer</a></li>
+      </ul>
+      <p>{{movie?.plot}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-10">
+      <div><strong>Director: </strong> {{movie?.director}} </div>
+      <div><strong>Writer: </strong> {{movie?.writer}} </div>
+      <div><strong>Actors: </strong> {{movie?.actors}} </div>
+    </div>
+  </div>
+</div>
