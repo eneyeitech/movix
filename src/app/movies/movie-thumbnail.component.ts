@@ -6,7 +6,7 @@ import { IMovie } from './shared';
   selector: 'app-movie-thumbnail',
   template: `
     <div [routerLink]="['/movies',movie.id]" class="well hoverwell thumbnail">
-    <img [src]="movie?.imageUrl" [alt]="movie?.name" class="movie-image">
+    <img [src]="imageUrl" [alt]="movie?.name" class="movie-image">
     <h2>{{movie?.name | uppercase}}</h2>
     <div>{{movie?.year}}</div>
   </div>
@@ -24,6 +24,7 @@ import { IMovie } from './shared';
 export class MovieThumbnailComponent {
   @Input() movie: IMovie;
   someProperty: any = 'some value';
+  imageUrl: string = './' + this.movie.imageUrl;
 
   /*getStartTimeStyle(): any {
     if (this.movie && this.movie.time === '8:00 am') {
