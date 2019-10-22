@@ -18,7 +18,7 @@ import { VoterService } from './voter.service';
 })
 export class MovieDetailsComponent implements OnInit {
   movie: any;
-  imageUrl: string;
+
   addMode: boolean;
   filterBy = 'all';
   sortBy = 'votes';
@@ -30,7 +30,7 @@ export class MovieDetailsComponent implements OnInit {
   ngOnInit() {
     this.route.data.forEach((data) => {
       this.movie = data['movie'];
-      this.imageUrl = './' + this.movie.imageUrl;
+
       this.addMode = false;
     });
 
