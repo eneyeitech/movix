@@ -7,7 +7,7 @@ import { of, Observable } from 'rxjs';
 @Injectable()
 export class AuthService {
   currentUser: IUser;
-  remoteUrl: string = 'https://movix-ng-server.herokuapp.com';
+  remoteUrl = 'https://movix-ng-server.herokuapp.com';
 
   constructor(private http: HttpClient) {
 

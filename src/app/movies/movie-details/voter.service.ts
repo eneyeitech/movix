@@ -6,7 +6,7 @@ import { catchError } from 'rxjs/operators';
 
 @Injectable()
 export class VoterService {
-  remoteUrl: string = 'https://movix-ng-server.herokuapp.com';
+  remoteUrl = 'https://movix-ng-server.herokuapp.com';
   constructor(private http: HttpClient) {
 
   }
