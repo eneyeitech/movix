@@ -14,7 +14,7 @@ import { IMovie } from './shared';
   styles: [`
     .green {color: #003300 !important;}
     .bold {font-weight: bold;}
-    .thumbnail {min-height:250px;}
+    .thumbnail {min-height:250px; background:	#181818}
     .pad-left {margin-left: 10px;}
     .well div {color: #bbb;}
     img{max-height:150px}

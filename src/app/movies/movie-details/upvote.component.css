@@ -2,12 +2,14 @@
   padding-left:24px;
   width:50px;
   margin-top:15px;
+
 }
 
 .votingWidget {
   height: 64px;
   padding-top: 7px;
   border-radius: 21px;
+  background: yellowgreen;
 }
 
 .votingButton {

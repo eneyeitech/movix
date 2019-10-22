@@ -1,11 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
 /* You can add global styles to this file, and also import other style files */
-
+body{
+  background: #101010;
+  color: #bd362f ;
+}
 .hoverwell:hover {
   background-color: #0f0f0f;
   cursor: pointer;
 }
-
+hr{
+  color: 	#181818;
+}
+.m-info{
+  color: #fff;
+}
+.m-info strong{
+  color: #fff;
+}
+.m-detail{
+  color: silver;
+}
 .container {
   padding-top: 10px;
 }

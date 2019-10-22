@@ -1,6 +1,6 @@
 {
   "/api": {
-      "target":"http://localhost:8808",
-      "secure": false
+      "target":"https://movix-ng-server.herokuapp.com",
+      "secure": true
   }
 }
