@@ -1,0 +1,133 @@
+.navbar-nav>li>a:hover{
+  background: #101010;
+}
+
+.navbar-nav>li>a:active{
+  background: #101010;
+}
+
+.navbar-nav>button:hover{
+  background: #101010;
+}
+
+.nav.navbar-nav {
+  font-size: 15px
+}
+
+.nav-black {
+  background: #282828
+}
+.list-group a{background: #101010}
+button {
+  background: #202020
+}
+
+#searchForm {
+  margin-right: 100px
+}
+
+@media (max-width: 1200px) {
+  #searchForm {
+    display: none
+  }
+}
+
+li>a.active {
+  color: #bd362f;
+}
+
+.btn-navbar{
+  background: color;
+}
+
+.navbar .btn-navbar {
+  margin-top: 10px;
+  float: right;
+  margin-right: 20px;
+  display: none;
+}
+   /* RESPONSIVE CSS
+    -------------------------------------------------- */
+
+    @media (max-width: 979px) {
+
+      .container.navbar-wrapper {
+        margin-bottom: 0;
+        width: auto;
+      }
+      .navbar-inner {
+        border-radius: 0;
+        margin: -20px 0;
+      }
+
+      .carousel .item {
+        height: 500px;
+      }
+      .carousel img {
+        width: auto;
+        height: 500px;
+      }
+
+      .featurette {
+        height: auto;
+        padding: 0;
+      }
+      .featurette-image.pull-left,
+      .featurette-image.pull-right {
+        display: block;
+        float: none;
+        max-width: 40%;
+        margin: 0 auto 20px;
+      }
+    }
+
+
+    @media (max-width: 767px) {
+
+      .navbar .btn-navbar {
+        display: block;
+      }
+
+      .navbar-inner {
+        margin: -20px;
+      }
+
+      .carousel {
+        margin-left: -20px;
+        margin-right: -20px;
+      }
+      .carousel .container {
+
+      }
+      .carousel .item {
+        height: 300px;
+      }
+      .carousel img {
+        height: 300px;
+      }
+      .carousel-caption {
+        width: 65%;
+        padding: 0 70px;
+        margin-top: 100px;
+      }
+      .carousel-caption h1 {
+        font-size: 30px;
+      }
+      .carousel-caption .lead,
+      .carousel-caption .btn {
+        font-size: 18px;
+      }
+
+      .marketing .span4 + .span4 {
+        margin-top: 40px;
+      }
+
+      .featurette-heading {
+        font-size: 30px;
+      }
+      .featurette .lead {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+    }

@@ -1,10 +1,17 @@
 <div class="navbar navbar-default nav-black">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand">mini Netflix</a>
-    </div>
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target="#menu">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand">Movix</a>
 
-    <div class="collapse navbar-collapse">
+    </div>
+    <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+
+    <div class="collapse navbar-collapse" id="menu">
       <ul class="nav navbar-nav">
         <li>
           <a [routerLink]="['/movies']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">All
@@ -12,16 +19,16 @@
         </li>
         <!--li><a [routerLink]="['/movies/new']" routerLinkActive="active">Create Movie</a></li-->
         <!--li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            Movies
-            <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu">
-            <li>
-              <a href="">Angular Connect</a>
-            </li>
-          </ul>
-        </li-->
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Movies
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="">Angular Connect</a>
+              </li>
+            </ul>
+          </li-->
         <li><a [routerLink]="['/movies/favorites']" routerLinkActive="active">My favorites</a></li>
       </ul>
       <div class="navbar-header navbar-right">
@@ -32,14 +39,15 @@
 
           </li>
           <li>
-              <a *ngIf="!auth.isAuthenticated()" [routerLink]="['user/signup']">SignUp</a>
-              <a *ngIf="auth.isAuthenticated()" (click)="logout()" class="btn btn-warning">Log Out</a>
+            <a *ngIf="!auth.isAuthenticated()" [routerLink]="['user/signup']">SignUp</a>
+            <a *ngIf="auth.isAuthenticated()" (click)="logout()" class="btn btn-warning">Log Out</a>
           </li>
         </ul>
       </div>
       <form id="searchForm" (ngSubmit)="searchSessions(searchTerm)" class="navbar-form navbar-right">
         <div class="form-group">
-          <input [(ngModel)]="searchTerm" name="searchTerm" type="text" class="form-control" placeholder="Search Movies">
+          <input [(ngModel)]="searchTerm" name="searchTerm" type="text" class="form-control"
+            placeholder="Search Movies">
         </div>
         <button class="btn btn-default" modal-trigger="searchResults">
           Search
@@ -51,9 +59,7 @@
 
 <app-simple-modal closeOnBodyClick="true" elementId="searchResults" title="Matching Movies">
   <div class="list-group">
-    <a class="list-group-item"
-    *ngFor="let session of foundSessions"
-    [routerLink]="['/movies', session.id]">{{session.name}}</a>
+    <a class="list-group-item" *ngFor="let session of foundSessions"
+      [routerLink]="['/movies', session.id]">{{session.name}}</a>
   </div>
 </app-simple-modal>
-

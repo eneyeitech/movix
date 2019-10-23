@@ -16,7 +16,7 @@ import { JQ_TOKEN } from './JQuery.service';
           </button>
           <h4 class="modal-title">{{title}}</h4>
         </div>
-        <div class="modal-body" (click)="closeModal()">
+        <div class="modal-body nav-black" (click)="closeModal()">
           <ng-content></ng-content>
         </div>
       </div>
@@ -25,6 +25,10 @@ import { JQ_TOKEN } from './JQuery.service';
   `,
   styles: [`
     .modal-body { height: 250px; overflow-y: scroll;}
+    .nav-black {
+      background: #282828
+    }
+    .modal-header{background:#101010}
   `]
 })
 
