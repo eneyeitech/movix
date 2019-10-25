@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { MovieService } from '../shared/movie.service';
 import { ActivatedRoute, Params } from '@angular/router';
 import { ISession, IMovie } from '../shared';
 import { AuthService } from 'src/app/user/auth.service';
 import { VoterService } from './voter.service';
+import { SESSION_STORAGE, WebStorageService } from 'angular-webstorage-service';
 
 
 @Component({
@@ -23,8 +24,9 @@ export class MovieDetailsComponent implements OnInit {
   filterBy = 'all';
   sortBy = 'votes';
 
-  constructor(public auth: AuthService, private movieService: MovieService,
-    private route: ActivatedRoute, private voterService: VoterService) {
+  constructor(public auth: AuthService,
+    private route: ActivatedRoute,
+    private voterService: VoterService) {
 
   }
   ngOnInit() {

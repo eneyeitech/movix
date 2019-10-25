@@ -4,6 +4,7 @@ import { AuthService } from './auth.service';
 import { Router } from '@angular/router';
 import { Toastr, TOASTR_TOKEN } from '../common/toastr.service';
 
+
 @Component({
   templateUrl: './profile.component.html',
   styles: [`

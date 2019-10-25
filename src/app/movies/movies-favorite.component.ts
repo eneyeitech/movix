@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { MovieService } from './shared/movie.service';
 import { ActivatedRoute } from '@angular/router';
 import { IMovie } from './shared';
 import { AuthService } from '../user/auth.service';
+
 
 @Component({
   template: `
@@ -26,7 +26,7 @@ import { AuthService } from '../user/auth.service';
 export class MoviesFavoriteComponent implements OnInit {
   movies: IMovie[];
   hasFavorites = false;
-  constructor(public auth: AuthService, private movieService: MovieService,
+  constructor(public auth: AuthService,
     private route: ActivatedRoute) {
 
   }

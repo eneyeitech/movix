@@ -269,6 +269,9 @@ If the Work includes a "NOTICE" text file as part of its distribution, then any 
 END OF TERMS AND CONDITIONS
 
 
+angular-webstorage-service
+MIT
+
 @angular/common
 MIT
 

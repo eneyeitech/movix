@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, PreloadAllModules } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { StorageServiceModule } from 'angular-webstorage-service';
 
 import {
   MoviesListComponent,
@@ -55,7 +56,8 @@ const jQuery = window['$'];
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes, { preloadingStrategy: PreloadAllModules }),
-    HttpClientModule
+    HttpClientModule,
+    StorageServiceModule
   ],
   providers: [
     MovieService,

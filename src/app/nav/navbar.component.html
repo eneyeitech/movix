@@ -34,12 +34,12 @@
       <div class="navbar-header navbar-right">
         <ul class="nav navbar-nav">
           <li>
-            <a *ngIf="!auth.isAuthenticated()" [routerLink]="['user/login']">Login</a>
-            <a *ngIf="auth.isAuthenticated()" [routerLink]="['user/profile']">Welcome {{auth.currentUser.firstName}}</a>
+            <a *ngIf="!auth.isAuthenticated()" [routerLink]="['user/login']" routerLinkActive="active">Login</a>
+            <a *ngIf="auth.isAuthenticated()" [routerLink]="['user/profile']" >Welcome {{auth.currentUser.firstName}}</a>
 
           </li>
           <li>
-            <a *ngIf="!auth.isAuthenticated()" [routerLink]="['user/signup']">SignUp</a>
+            <a *ngIf="!auth.isAuthenticated()" [routerLink]="['user/signup']" routerLinkActive="active">SignUp</a>
             <a *ngIf="auth.isAuthenticated()" (click)="logout()" class="btn btn-warning">Log Out</a>
           </li>
         </ul>

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MovieService } from './shared/movie.service';
 import { ActivatedRoute } from '@angular/router';
 import { IMovie } from './shared';
 
@@ -20,7 +19,7 @@ import { IMovie } from './shared';
 })
 export class MoviesListComponent implements OnInit {
   movies: IMovie[];
-  constructor(private movieService: MovieService,
+  constructor(
     private route: ActivatedRoute) {
 
   }

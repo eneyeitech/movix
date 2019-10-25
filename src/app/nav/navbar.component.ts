@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../user/auth.service';
-import { ISession, MovieService, IMovie } from '../movies';
+import {  MovieService, IMovie } from '../movies';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,8 +11,9 @@ import { Router } from '@angular/router';
 export class NavBarComponent {
   searchTerm = '';
   foundSessions: IMovie[];
-  constructor(public auth: AuthService, private router: Router, private movieService: MovieService) {
-
+  constructor(public auth: AuthService,
+     private router: Router,
+     private movieService: MovieService) {
   }
 
   searchSessions(searchTerm) {
